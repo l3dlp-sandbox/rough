@@ -1,4 +1,7 @@
 .cache
 .DS_Store
-z
 node_modules
+z
+bin
+dist
+bundled

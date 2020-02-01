@@ -1,6 +1,6 @@
 # Rough.js
 
-<b>Rough.js</b> is a light weight (9kB) graphics library that lets you draw in a _sketchy_, _hand-drawn-like_, style.
+<b>Rough.js</b> is a small (<9kB gzipped) graphics library that lets you draw in a _sketchy_, _hand-drawn-like_, style.
 The library defines primitives to draw lines, curves, arcs, polygons, circles, and ellipses. It also supports drawing [SVG paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths).
 
 Rough.js works with both [Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) and [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG).
@@ -21,7 +21,7 @@ npm install --save roughjs
 
 ## Usage
 
-![Rough.js rectangle](https://roughjs.com/images/main/m1.png)
+![Rough.js rectangle](https://roughjs.com/images/m1.png)
 
 ```js
 const rc = rough.canvas(document.getElementById('canvas'));
@@ -38,7 +38,7 @@ svg.appendChild(node);
 
 ### Lines and Ellipses
 
-![Rough.js rectangle](https://roughjs.com/images/main/m2.png)
+![Rough.js rectangle](https://roughjs.com/images/m2.png)
 
 ```js
 rc.circle(80, 120, 50); // centerX, centerY, diameter
@@ -48,7 +48,7 @@ rc.line(80, 120, 300, 100); // x1, y1, x2, y2
 
 ### Filling
 
-![Rough.js rectangle](https://roughjs.com/images/main/m3.png)
+![Rough.js rectangle](https://roughjs.com/images/m3.png)
 
 ```js
 rc.circle(50, 50, 80, { fill: 'red' }); // fill with red hachure
@@ -68,6 +68,10 @@ rc.rectangle(120, 105, 80, 80, {
 });
 ```
 
+Fill styles can be: **hachure**(default), **solid**, **zigzag**, **cross-hatch**, **dots**, **dashed**, or **zigzag-line**
+
+![Rough.js fill examples](https://roughjs.com/images/m14.png)
+
 ### Sketching style
 
 ![Rough.js rectangle](https://roughjs.com/images/main/m4.png)
@@ -80,7 +84,7 @@ rc.rectangle(220, 15, 80, 80, { bowing: 6, stroke: 'green', strokeWidth: 3 });
 
 ### SVG Paths
 
-![Rough.js rectangle](https://roughjs.com/images/main/m5.png)
+![Rough.js paths](https://roughjs.com/images/m5.png)
 
 ```js
 rc.path('M80 80 A 45 45, 0, 0, 0, 125 125 L 125 80 Z', { fill: 'green' });
@@ -91,22 +95,11 @@ rc.path('M230 230 A 45 45, 0, 1, 1, 275 275 L 275 230 Z', { fill: 'blue' });
 
 SVG Path with simplification:
 
-![Rough.js rectangle](https://roughjs.com/images/main/m9.png) ![Rough.js rectangle](https://roughjs.com/images/main/m10.png)
-
-## Using web workers
-
-If you have [Workly](https://github.com/pshihn/workly) imported on your web page (~1k only), RoughJS will automatically offload all processing to a web worker - freeing up your main UI thread. This is great when creating complex drawings using RoughJs like maps. Read more about it [here](https://github.com/pshihn/rough/wiki/RoughJS-in-a-web-worker).
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/pshihn/workly/dist/workly.min.js"></script>
-<script src="../../dist/rough.min.js"></script>
-```
-
-![Rough.js map](https://roughjs.com/images/main/m6.png)
-
-(source code for this map in examples)
+![Rough.js texas map](https://roughjs.com/images/m9.png) ![Rough.js texas map](https://roughjs.com/images/m10.png)
 
 ## Examples
+
+![Rough.js US map](https://roughjs.com/images/m6.png)
 
 [View examples here](https://github.com/pshihn/rough/wiki/Examples)
 
